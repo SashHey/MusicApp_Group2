@@ -10,7 +10,7 @@ class Song (songName: String, songArtist: String, songYear: Int, songDuration: S
     var year : Int = 0
     var duration : String = ""
 
-    //added secondary constructor
+    //added secondary constructor for if user only know the name and artist, no other info
     constructor(songName: String, songArtist: String) : this(songName, songArtist, 0, ""){ }
 
     //initialising the variables/attributes for the song objects

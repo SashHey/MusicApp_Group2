@@ -11,6 +11,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        //calling the Song class for a song object
+        Song("Ordinary", "Alex Warren", 2026, "2.5")
+        Song("Swim", "BTS", 2026, "3.5")
+        Song("So Easy", "Olivia Dean")
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

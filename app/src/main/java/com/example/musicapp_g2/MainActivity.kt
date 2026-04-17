@@ -1,16 +1,20 @@
 package com.example.musicapp_g2
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.musicapp_g2.Song
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        var songDisplayTxt = findViewById<TextView>(R.id.songDisplayId)
 
         //calling the Song class for a song object
         Song("Ordinary", "Alex Warren", 2026, "2.5")

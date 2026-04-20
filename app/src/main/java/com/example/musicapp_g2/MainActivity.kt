@@ -14,12 +14,23 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        var songDisplayTxt = findViewById<TextView>(R.id.songDisplayId)
+        val songDisplayTxt = findViewById<TextView>(R.id.songDisplayId)
+        var songDisplay = ""
 
         //calling the Song class for a song object
-        Song("Ordinary", "Alex Warren", 2026, "2.5")
-        Song("Swim", "BTS", 2026, "3.5")
-        Song("So Easy", "Olivia Dean")
+        var song1 = Song("Ordinary", "Alex Warren", 2026, "2.5")
+        var song2 = Song("Swim", "BTS", 2026, "3.5")
+        var song3 = Song("So Easy", "Olivia Dean")
+
+        //creating array to hold songs
+        var songs = arrayOf<Song>(song1, song2, song3)
+
+        //for loop to loop through and display items in song array
+        for (song in songs){
+            songDisplay += "${song.DisplaySongs()}\n\n"
+        }
+
+        songDisplayTxt.text = songDisplay
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
